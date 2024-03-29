@@ -10,7 +10,7 @@ let play = document.querySelector("#play");
 let users = document.querySelector(".users");
 let usersIdnt = document.querySelector(".users-identity");
 
-const newGame = document.querySelector("#new-game");
+// const newGame = document.querySelector("#new-game");
 const resetGame = document.querySelector("#reset-game");
 
 let turnO=true;
@@ -108,7 +108,16 @@ const resetGameFun = () =>{
     
 }
 
-resetGame.addEventListener("click",resetGameFun);
+resetGame.addEventListener("click",()=>{
+    if(playerO.value!="" && playerX.value!=""){
+        
+        resetGameFun();
+    }
+    else{
+        alert("First you play later can re-start");
+    }
+    
+});
 
 play.addEventListener("click",()=>{
     if(playerO.value!="" && playerX.value!=""){
@@ -121,3 +130,8 @@ play.addEventListener("click",()=>{
     }
     
 });
+
+
+
+
+
